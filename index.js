@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = rquire('cors');
+const cors = require('cors');
 const app = express();
 
 app.use(cors());
@@ -45,5 +45,9 @@ app.post('/vidinad', (req, res) => {
         name: req.body.name
     }
     vidinad.push(newVidin)
-    return res.status(201).location('localhost:8080/vidinad/'+{vidinad.length -1}).send(newVidin)
+    return res.status(201).location('localhost:8080/vidinad/'+(vidinad.length -1)).send(newVidin)
+})
+
+app.listen(8080, () => {
+    console.log(`API töötab aadressil: http://localhost:8080`)
 })
