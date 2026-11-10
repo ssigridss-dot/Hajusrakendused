@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><div id="app"></div></td>
+            <td>
+                <div>
+                    <button type="button" onclick="loadDoc()">ANNAMULLEPEEKON</button>
+                    <p id="bacon"></p>
+                    <script>
+                        function loadDoc() {
+                            const xhttp = new XMLHttpRequest();
+                            xhttp.onload = function () {
+                                document.getElementById("bacon").innerHTML =  this.responseText;
+                            }
+                            xhttp.open("GET", "https://baconipsum.com/api/?type=all-meat")
+                            xhttp.send()
+                        }
+                    </script>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <div id="app"></div>
+    <script src="./carjson.js" type="module"></script>
+    
+</body>
+</html>
